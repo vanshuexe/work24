@@ -5,8 +5,9 @@
 .back-to-top:hover { background:#f2f3ed; transform:translateY(-2px); }
 body:has(input:focus) .back-to-top,body:has(textarea:focus) .back-to-top,body:has(select:focus) .back-to-top { visibility:hidden; }
 @keyframes control-appear { from { opacity:0; transform:translateY(5px); } to { opacity:1; transform:translateY(0); } }
-.reveal-target { opacity:0; transform:translate3d(0,14px,0); transition:opacity .52s cubic-bezier(.2,.65,.3,1),transform .52s cubic-bezier(.2,.65,.3,1); transition-delay:var(--reveal-delay,0ms); }
-.reveal-target.is-revealed,.reveal-target:focus-within { opacity:1; transform:none; }
+.reveal-target,.reference-home .reveal-target { opacity:1; transform:none; }
+.reveal-target.is-revealed,.reference-home .reveal-target.is-revealed { animation:content-enter .45s cubic-bezier(.2,.65,.3,1) both; }
+@keyframes content-enter { from { transform:translate3d(0,8px,0); } to { transform:none; } }
 .project-details { padding-top:52px; padding-bottom:58px; border-top:1px solid #e3e5dc; }
 .details-intro { max-width:660px; margin-bottom:32px; }
 .detail-kicker { display:block; color:#68745d; font:600 10px/1.5 Arial,Helvetica,sans-serif; letter-spacing:1.6px; margin-bottom:12px; }
@@ -91,6 +92,70 @@ body:has(input:focus) .back-to-top,body:has(textarea:focus) .back-to-top,body:ha
   .process-steps { grid-template-columns:1fr; gap:25px; }
   .process-step-top { margin-bottom:13px; }
 }
+/* Readable home copy must take precedence over the saved page's resets. */
+.reference-home #comp-ljgsdwjs { height:auto!important; min-height:0!important; padding:36px 24px!important; box-sizing:border-box; }
+.reference-home #comp-ljgsdwjs [data-mesh-id$="gridContainer"] { display:block!important; min-height:0!important; }
+.reference-home #comp-ljgsdwjs [data-testid=richTextElement] { position:relative!important; left:0!important; width:100%!important; max-width:820px!important; margin:0 auto!important; padding:0!important; height:auto!important; }
+.reference-home #comp-ljgsdwjs h2,.reference-home #comp-ljgsdwjs h2 span { font:500 clamp(24px,2.5vw,32px)/1.3 Arial,Helvetica,sans-serif!important; color:#2d3d2f!important; text-align:center!important; }
+.reference-home #comp-ljgsdwjs p,.reference-home #comp-ljgsdwjs p span { font:400 15px/1.8 Arial,Helvetica,sans-serif!important; text-align:center!important; color:#626c60!important; letter-spacing:normal!important; word-spacing:normal!important; }
+.reference-home #comp-ljgsdwjs p { margin:18px 0 0!important; }
+.reference-home #comp-mg0qgmec .home-process-details .details-intro { margin:0 0 26px; max-width:660px; }
+.reference-home #comp-mg0qgmec .home-process-details .detail-kicker { display:block; margin:0 0 12px; color:#68745d; font:600 11px/1.5 Arial,Helvetica,sans-serif; letter-spacing:1.6px; }
+.reference-home #comp-mg0qgmec .home-process-details .details-intro h3 { margin:0; color:#25372d; font:500 clamp(25px,2.6vw,32px)/1.3 Arial,Helvetica,sans-serif; letter-spacing:-.6px; }
+.reference-home #comp-mg0qgmec .process-steps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:26px; }
+.reference-home #comp-mg0qgmec .process-steps>article { min-width:0; padding-top:20px; border-top:1px solid #ccd2c5; }
+.reference-home #comp-mg0qgmec .process-step-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:18px; color:#60724e; }
+.reference-home #comp-mg0qgmec .process-step-top>span { color:#84907b; font:400 12px/1 Arial,Helvetica,sans-serif; }
+.reference-home #comp-mg0qgmec .process-steps h4 { margin:0 0 10px; color:#30422f; font:600 16px/1.5 Arial,Helvetica,sans-serif; }
+.reference-home #comp-mg0qgmec .source-about-copy p { color:#626c60; font:400 15px/1.85 Arial,Helvetica,sans-serif; text-align:left; }
+.reference-home #comp-mg0qgmec .process-steps p { margin:0; color:#69735f; font:400 14px/1.8 Arial,Helvetica,sans-serif; }
+.reference-home main :is(section,h1,h2,h3,h4,summary,.home-specifications,.home-process-details) { scroll-margin-top:130px; }
+.reference-home #comp-mrelzqvs h2,.reference-home #comp-mrelzqvs h2 span { font:500 clamp(28px,3vw,39px)/1.3 Arial,Helvetica,sans-serif!important; color:#26372b; }
+@media(max-width:1100px) {
+  .reference-home #comp-mg0qgmec .process-steps { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:760px) {
+  .reference-home main :is(section,h1,h2,h3,h4,summary,.home-specifications,.home-process-details) { scroll-margin-top:96px; }
+}
+@media(max-width:480px) {
+  .reference-home #comp-mg0qgmec .process-steps { grid-template-columns:1fr; gap:25px; }
+  .reference-home #comp-ljgsdwjs p,.reference-home #comp-ljgsdwjs p span { text-align:left!important; }
+}
+/* Configuration cards use scoped rules to avoid the imported gallery styles. */
+.specifications-details .details-intro,
+.reference-home #comp-mpwbrje2 .home-specifications .details-intro { max-width:680px; margin:0 0 28px; text-align:left; }
+.reference-home #comp-mpwbrje2 .home-specifications .detail-kicker { display:block; background:transparent; color:#68745d; border:0; border-radius:0; padding:0; margin:0 0 12px; font:600 11px/1.5 Arial,Helvetica,sans-serif; letter-spacing:1.8px; }
+.reference-home #comp-mpwbrje2 .home-specifications .details-intro h3 { display:block; min-height:0; margin:0; color:#25372d; text-align:left; font:500 clamp(25px,2.5vw,32px)/1.25 Arial,Helvetica,sans-serif; letter-spacing:-.6px; }
+.specifications-details .specifications-grid,
+.reference-home #comp-mpwbrje2 .home-specifications .specifications-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+.specifications-details .specification-card,
+.reference-home #comp-mpwbrje2 .home-specifications .specification-card { min-width:0; padding:26px; border:1px solid #dfe5d8; border-radius:10px; background:#f8faf5; text-align:left; box-sizing:border-box; }
+.specification-icon,
+.reference-home #comp-mpwbrje2 .home-specifications .specification-icon { display:grid; place-items:center; width:48px; height:48px; margin:0 0 22px; border:1px solid #dfe6d6; border-radius:12px; background:#edf2e6; color:#596e4c; }
+.specification-icon svg { display:block; width:25px; height:25px; }
+.specifications-details .specification-card h3,
+.reference-home #comp-mpwbrje2 .home-specifications .specification-card h4 { display:block; min-height:0; margin:0 0 12px; text-align:left; color:#68765e; font:500 13px/1.5 Arial,Helvetica,sans-serif; letter-spacing:.2px; }
+.specifications-details .specification-card strong,
+.reference-home #comp-mpwbrje2 .home-specifications .specification-card strong { display:block; margin:0 0 16px; color:#2d402c; font:500 clamp(17px,1.6vw,21px)/1.5 Arial,Helvetica,sans-serif; letter-spacing:-.25px; overflow-wrap:anywhere; }
+.specifications-details .specification-card p,
+.reference-home #comp-mpwbrje2 .home-specifications .specification-card p { margin:0; padding-top:16px; border-top:1px solid #dfe5d8; color:#687160; text-align:left; font:400 14px/1.8 Arial,Helvetica,sans-serif; }
+.specifications-details .specification-footnote,
+.reference-home #comp-mpwbrje2 .home-specifications .specification-footnote { max-width:760px; margin:20px 0 0; color:#77806f; font:400 12px/1.8 Arial,Helvetica,sans-serif; text-align:left; }
+@media(max-width:900px) {
+  .specifications-details .specifications-grid,
+  .reference-home #comp-mpwbrje2 .home-specifications .specifications-grid { grid-template-columns:1fr; gap:16px; }
+  .specifications-details .specification-card,
+  .reference-home #comp-mpwbrje2 .home-specifications .specification-card { padding:24px; }
+  .specifications-details .specification-card strong,
+  .reference-home #comp-mpwbrje2 .home-specifications .specification-card strong { font-size:21px; }
+}
+@media(max-width:480px) {
+  .specifications-details .specification-card,
+  .reference-home #comp-mpwbrje2 .home-specifications .specification-card { padding:22px; }
+  .specification-icon,.reference-home #comp-mpwbrje2 .home-specifications .specification-icon { margin-bottom:18px; }
+  .specifications-details .specification-card strong,
+  .reference-home #comp-mpwbrje2 .home-specifications .specification-card strong { font-size:19px; }
+}
 /* Benefits: consistent numbered cards on the home and dedicated pages. */
 .benefits-grid,
 .reference-home #comp-ljgsdwjv1 .source-benefits-grid { gap:20px; }
@@ -116,5 +181,6 @@ body:has(input:focus) .back-to-top,body:has(textarea:focus) .back-to-top,body:ha
 }
 @media(prefers-reduced-motion:reduce) {
   .reveal-target { opacity:1!important; transform:none!important; transition:none!important; }
+  .reveal-target.is-revealed,.reference-home .reveal-target.is-revealed { animation:none!important; }
   .back-to-top { animation:none!important; transition:none!important; }
 }

@@ -193,4 +193,45 @@ input[type=checkbox] { width:17px; height:17px; accent-color:#1c322b; margin-top
   .content-width { width:calc(100% - 32px); }
   .reference-home [data-mesh-id="comp-ljgsdwjrinlineContent-gridContainer"] { padding-inline:18px; }
 }
+/* Native quotation layout avoids fixed coordinates from the saved source. */
+.reference-home #comp-ljgsdwjr { background:#f7f8f3; padding:64px 28px!important; box-sizing:border-box; }
+.reference-home #comp-ljgsdwjr .quotation-layout { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.3fr); align-items:start; gap:64px; width:100%; max-width:1120px; margin:0 auto; }
+.reference-home #comp-ljgsdwjr .quotation-copy { padding-top:20px; }
+.reference-home #comp-ljgsdwjr .quotation-copy h2 { color:#27362b; font:500 clamp(30px,3vw,42px)/1.18 Arial,Helvetica,sans-serif; letter-spacing:-1px; text-align:left; margin:0 0 22px; text-wrap:balance; }
+.reference-home #comp-ljgsdwjr .quotation-copy>p { color:#626a5f; font:400 16px/1.8 Arial,Helvetica,sans-serif; text-align:left; margin:0; }
+.reference-home #comp-ljgsdwjr .quotation-note { display:flex; gap:13px; align-items:flex-start; padding-top:24px; margin-top:28px; border-top:1px solid #dce1d4; color:#63715a; font:400 13px/1.7 Arial,Helvetica,sans-serif; }
+.reference-home #comp-ljgsdwjr .quotation-note svg { flex-shrink:0; margin-top:3px; }
+.reference-home #comp-ljgsdwjr .quotation-form-panel { min-width:0; background:#fff; border:1px solid #e0e4d9; border-radius:10px; padding:30px; box-sizing:border-box; }
+.reference-home #comp-ljgsdwjr form.polished-enquiry { margin:0!important; max-width:none!important; }
+.reference-home #comp-ljgsdwjr .enquiry-grid { gap:19px 20px; }
+@media(max-width:1000px) {
+  .reference-home #comp-ljgsdwjr .quotation-layout { gap:32px; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); }
+  .reference-home #comp-ljgsdwjr .quotation-form-panel { padding:24px; }
+}
+@media(max-width:760px) {
+  .reference-home #comp-ljgsdwjr { padding:36px 22px 40px!important; }
+  .reference-home #comp-ljgsdwjr .quotation-layout { grid-template-columns:1fr; gap:28px; }
+  .reference-home #comp-ljgsdwjr .quotation-copy { padding:0; }
+  .reference-home #comp-ljgsdwjr .quotation-copy h2 { font-size:32px!important; letter-spacing:-.6px; margin-bottom:16px; }
+  .reference-home #comp-ljgsdwjr .quotation-note { margin-top:20px; padding-top:18px; }
+  .reference-home #comp-ljgsdwjr .quotation-form-panel { padding:24px; }
+  .header .menu-toggle,.reference-home #SITE_HEADER .source-menu-button { width:auto!important; min-width:76px; padding:10px!important; gap:8px; border:1px solid #ffffff40; border-radius:6px; }
+  .header .mobile-menu-label,.reference-home #SITE_HEADER .mobile-menu-label { font:500 12px/1 Arial,Helvetica,sans-serif!important; color:white; }
+  .header .menu-toggle svg,.reference-home #SITE_HEADER .source-menu-button svg { width:20px; height:20px; flex-shrink:0; }
+  .mobile-nav,.reference-home #SITE_HEADER .source-navigation { border-top:1px solid #ffffff22; box-shadow:0 12px 20px #00000025; }
+  .mobile-nav a,.reference-home #SITE_HEADER .source-navigation a { justify-content:space-between; }
+  .reference-home #SITE_HEADER .source-navigation a:after { content:'›'; color:#9daba0; font-size:22px; }
+  .mobile-nav a[aria-current=page],.reference-home #SITE_HEADER .source-navigation a[aria-current=page] { color:#e4b29c!important; }
+}
+@media(max-width:480px) {
+  .reference-home #comp-ljgsdwjr .quotation-form-panel { padding:0; border:0; border-radius:0; background:transparent; }
+  .reference-home #SITE_HEADER .source-brand img { width:210px!important; height:118px!important; top:-36px!important; left:0!important; }
+  .header .logo { width:185px; }
+  .reference-home #comp-ljgsdwjr .quotation-copy h2 { font-size:30px!important; }
+}
+@media(max-width:350px) {
+  .reference-home #SITE_HEADER .source-brand img { width:180px!important; height:101px!important; top:-30px!important; }
+  .reference-home #SITE_HEADER #comp-iujfhbo7 { width:195px!important; max-width:195px!important; }
+  .header .logo { width:175px; }
+}
 @media(prefers-reduced-motion:reduce) { *,*:before,*:after { scroll-behavior:auto!important; transition:none!important; animation:none!important; } }
