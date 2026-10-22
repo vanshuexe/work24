@@ -5,7 +5,7 @@ import ReferenceHome from "@/components/reference-home";
 
 export const metadata: Metadata = {
   "title": "Prefab Homes & Modular Spaces | Smart Cubes",
-  "description": "Discover Smart Cubes prefab homes, holiday cottages, studios, and modular workspaces."
+  "description": "Discover Smart Cubes prefab homes, office cabins, and site offices."
 };
 
 export default function Page() {

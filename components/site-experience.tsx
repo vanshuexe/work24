@@ -33,7 +33,7 @@ export default function SiteExperience() {
     const observer = new IntersectionObserver(entries => {
       for (const entry of entries) if (entry.isIntersecting) { entry.target.classList.add("is-revealed"); observer.unobserve(entry.target); }
     }, { threshold: 0.07, rootMargin: "0px 0px -24px 0px" });
-    const selector = ".source-design-gallery>a,.source-benefits-grid article,.source-about-copy>p,.source-contact-copy,.source-audience-grid>a,.source-value-strip>div,.process-steps>article,.specifications-grid>article,.checklist-grid>article,.audience-details-grid>article,.design-card,.benefit,.about-copy>p,.audience-card,.details-intro";
+    const selector = ".source-design-gallery>a,.source-benefits-grid article,.source-about-copy>p,.source-contact-copy,.source-audience-grid>a,.source-value-strip>div,.process-steps>article,.specifications-grid>article,.checklist-grid>article,.audience-details-grid>article,.design-card,.benefit,.about-copy>p,.audience-card,.details-intro,.about-visual,.about-highlights li,.hero-highlights>div,.home-project-checklist>div,.home-model-card,.catalog-help,.more-home-card,.product-highlights li";
     const scan = () => {
       frame = 0;
       document.querySelectorAll(selector).forEach(element => {

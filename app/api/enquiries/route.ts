@@ -1,3 +1,4 @@
+import { enquiryInterests } from "@/data/home-models";
 import { NextResponse } from "next/server";
 import { appendFile, mkdir } from "node:fs/promises";
 import path from "node:path";
@@ -20,7 +21,7 @@ export async function POST(request: Request) {
     if (input.website) return NextResponse.json({ ok: true });
     const clean = (key: string, limit: number) => typeof input[key] === "string" ? input[key].trim().slice(0, limit) : "";
     const enquiry = { id: randomUUID(), createdAt: new Date().toISOString(), name: clean("name", 100), phone: clean("phone", 20), email: clean("email", 254), interest: clean("interest", 100), location: clean("location", 150), message: clean("message", 3000) };
-    const interests = ["Prefab homes", "Farm & holiday cottages", "Studio & compact spaces", "Office cabins", "Site offices & security cabins", "Help me choose"];
+    const interests = enquiryInterests;
     if (enquiry.name.length < 2 || !/^[+0-9 ()-]{8,20}$/.test(enquiry.phone) || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(enquiry.email) || !interests.includes(enquiry.interest) || enquiry.location.length < 2 || input.consent !== "on") {
       return NextResponse.json({ error: "Please complete all required fields with valid details and agree to be contacted." }, { status: 400 });
     }

@@ -1,6 +1,6 @@
 const {chromium}=require(process.env.PLAYWRIGHT_MODULE||'playwright');
 const fs=require('node:fs');
-const routes=['/','/about-us','/designs','/who-we-serve','/benefits-of-prefab','/contact','/faqs'];
+const routes=['/','/about-us','/designs','/contact','/faqs','/prefab-homes','/prefab-homes/sc-20x10s','/prefab-homes/sc-20x10-one','/prefab-homes/sc-20x40-two'];
 (async()=>{
  const browser=await chromium.launch({executablePath:process.env.CHROME_EXECUTABLE,headless:true});
  try{
