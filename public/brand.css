@@ -1,0 +1,44 @@
+/* Brand palette taken from the Smart Cubes logo: teal #00b0b8 and gray #606068. Loaded last. */
+:root { --brand-teal:#00b0b8; --brand-teal-deep:#00868d; --brand-teal-tint:#e0f4f5; --brand-gray:#606068; --brand-ink:#33333a; --brand-ink-deep:#26262c; --black:#33333a; --accent:#00b0b8; --teal:#00a8aa; }
+::selection { background:#c9eef0; }
+
+/* Header: white, so the logo shows in its true gray and teal */
+.header,.reference-home #SITE_HEADER { background:#fff!important; color:var(--brand-ink); box-shadow:0 1px 0 #e4e6ea,0 8px 24px -18px #26262c66; }
+.logo-white img,.reference-home .source-brand img { filter:none!important; }
+.menu-toggle,.reference-home .source-menu-button { color:var(--brand-ink)!important; background:none; }
+.desktop-nav a,.reference-home #SITE_HEADER .source-navigation a { color:var(--brand-gray)!important; font-weight:700; letter-spacing:.02em; position:relative; transition:color .2s; }
+.desktop-nav a:hover,.reference-home #SITE_HEADER .source-navigation a:hover { color:var(--brand-teal-deep)!important; }
+.desktop-nav a[aria-current=page],.reference-home #SITE_HEADER .source-navigation a[aria-current=page] { color:var(--brand-teal-deep)!important; }
+.desktop-nav a:after,.reference-home #SITE_HEADER .source-navigation a:after { content:""; position:absolute; left:50%; bottom:5px; width:0; height:2px; border-radius:2px; background:var(--brand-teal); transform:translateX(-50%); transition:width .25s; }
+.desktop-nav a:hover:after,.desktop-nav a[aria-current=page]:after,.reference-home #SITE_HEADER .source-navigation a:hover:after,.reference-home #SITE_HEADER .source-navigation a[aria-current=page]:after { width:22px; }
+.mobile-nav { background:#fff; border-top:1px solid #e4e6ea; box-shadow:0 14px 24px -14px #26262c66; }
+.mobile-nav a { border-bottom:1px solid #eceef0; color:var(--brand-gray); }
+.mobile-nav a[aria-current=page] { color:var(--brand-teal-deep); }
+
+/* Title bands and footer */
+.section-heading { background:var(--brand-ink); }
+.reference-home .source-about-heading,.reference-home .source-contact-heading,.reference-home .source-about-heading .LNYVZi,.reference-home .source-contact-heading .LNYVZi { background-color:var(--brand-ink)!important; }
+.reference-home #comp-m9ux3n40 .LNYVZi { background-color:var(--brand-ink)!important; }
+.reference-home #SITE_HEADER .rt35re { background:transparent!important; }
+footer,.reference-home .source-footer,.reference-home #SITE_FOOTER { background:#f1f3f5; color:var(--brand-gray); }
+footer .footer-inner>p,footer .footer-bottom,.reference-home .source-footer p { color:var(--brand-gray); }
+footer .footer-bottom { border-top-color:#dde0e4; }
+footer a,.reference-home .source-footer a { color:var(--brand-gray)!important; }
+.reference-home .source-footer { border-top:3px solid var(--brand-teal); }
+footer { border-top:3px solid var(--brand-teal); }
+footer a:hover,.reference-home .source-footer a:hover { color:var(--brand-teal-deep)!important; }
+
+/* Buttons and accents */
+.explore-button,.reference-home #comp-mtzsgo7e a { background:var(--brand-teal-deep)!important; }
+.explore-button:hover,.reference-home #comp-mtzsgo7e a:hover { background:var(--brand-teal)!important; }
+.black-button { background:var(--brand-ink); border-color:var(--brand-ink); }
+.black-button:hover { background:var(--brand-teal-deep); border-color:var(--brand-teal-deep); }
+.reading-progress { background:var(--brand-teal); }
+.reference-home .source-design-gallery a>span,.reference-home .option-body>span { background:var(--brand-teal-deep)!important; }
+.model-enquiry,.reference-home #comp-ljgsdwjr button[type=submit] { background:var(--brand-ink); }
+.model-enquiry:hover,.reference-home #comp-ljgsdwjr button[type=submit]:hover { background:var(--brand-teal-deep); }
+.reference-home .about-badge,.reference-home .option-tag,.model-image-tag { color:var(--brand-ink); }
+.reference-home .detail-kicker,.detail-kicker { color:var(--brand-teal-deep)!important; }
+.reference-home .source-faq-item[open] summary:after { background:var(--brand-teal-deep); }
+.reference-home .source-contact-copy>a { background:var(--brand-ink)!important; transition:background .3s; }
+.reference-home .source-contact-copy>a:hover { background:var(--brand-teal-deep)!important; }

@@ -45,5 +45,5 @@ export default function ReferenceHome({ markup }: { markup: string }) {
     document.addEventListener("keydown", keydown); document.addEventListener("pointerdown", outside); window.addEventListener("resize", resize);
     return () => { element.removeEventListener("click", click); element.removeEventListener("submit", submit); document.removeEventListener("keydown", keydown); document.removeEventListener("pointerdown", outside); window.removeEventListener("resize", resize); };
   }, [router]);
-  return <><link rel="stylesheet" href="/reference-home.css" /><link rel="stylesheet" href="/reference-adapter.css" /><link rel="stylesheet" href="/reference-layout.css" /><link rel="stylesheet" href="/ui-polish.css" /><link rel="stylesheet" href="/enhance.css" /><div ref={root} className="reference-home" dangerouslySetInnerHTML={{ __html: markup }} /></>;
+  return <><link rel="stylesheet" href="/reference-home.css" /><link rel="stylesheet" href="/reference-adapter.css" /><link rel="stylesheet" href="/reference-layout.css" /><link rel="stylesheet" href="/ui-polish.css" /><link rel="stylesheet" href="/enhance.css" /><link rel="stylesheet" href="/brand.css" /><div ref={root} className="reference-home" dangerouslySetInnerHTML={{ __html: markup }} /></>;
 }

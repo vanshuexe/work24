@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="en"><head><link rel="stylesheet" href="/audience-illustrations.css" /><link rel="stylesheet" href="/ui-polish.css" /><link rel="stylesheet" href="/site-details.css" /><link rel="stylesheet" href="/home-catalog.css" /><link rel="stylesheet" href="/enhance.css" /></head><body>{children}<SiteExperience /></body></html>;
+  return <html lang="en" data-scroll-behavior="smooth"><head><link rel="stylesheet" href="/audience-illustrations.css" /><link rel="stylesheet" href="/ui-polish.css" /><link rel="stylesheet" href="/site-details.css" /><link rel="stylesheet" href="/home-catalog.css" /><link rel="stylesheet" href="/enhance.css" /><link rel="stylesheet" href="/brand.css" /></head><body>{children}<SiteExperience /></body></html>;
 }

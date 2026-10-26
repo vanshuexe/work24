@@ -36,7 +36,7 @@ const form = dom('form').first();
 form.attr('data-source-enquiry','true');
 form.find('input').each((index,node) => { const names=['name','email','phone','location']; dom(node).attr({name:names[index],required:'required',maxlength:index===0?'100':index===1?'254':index===2?'20':'150'}); if(index===2)dom(node).attr({type:'tel',pattern:'[+0-9 ()-]{8,20}'}); });
 form.find('textarea').attr({name:'message',maxlength:'3000'});
-const choices = ['Prefab homes','Office cabins','Site offices & security cabins','SC 20x10S','SC 20x10 One','SC 20x40 Two','Help me choose'];
+const choices = ['Prefab homes','Office cabins','Site offices & security cabins','SC 200 S','SC 300 One','SC 600 Two','Help me choose'];
 form.find('button').filter((_, node)=>dom(node).text().trim()==='Choose one').replaceWith('<select name="interest" aria-label="Interested in" required><option value="">Choose one</option>'+choices.map(value=>'<option>'+value+'</option>').join('')+'</select>');
 form.find('[data-hook="submit-button"]').attr('type','submit');
 form.find('button').filter((_,node)=>dom(node).attr('type')==='button' && !dom(node).text().trim()).remove();
@@ -95,7 +95,7 @@ dom('a').each((_,node)=>{ const element=dom(node),href=element.attr('href')||'';
 const manifest=[];
 dom('img').each((_,node)=>{const element=dom(node),src=element.attr('src')||'';if(src.startsWith('http')){const base=src.split('/v1/')[0];let fallback='/images/cottage.jpg';if(/office|site/i.test(element.attr('alt')||''))fallback='/images/office.jpg';if(src.includes('c02e70'))fallback='/images/reference-hero.jpg';const file='/images/reference-'+manifest.length+(/\.png/i.test(base)?'.png':/\.webp/i.test(base)?'.webp':'.jpg');manifest.push({url:base,file,fallback});element.attr({'src':file,'data-fallback':fallback}).removeAttr('srcset sizes');}});
 // Final home structure follows the current three-option brief.
-dom('#comp-mhj27bss,#comp-ljgsdwjv1,#comp-ljgsdwjs,.home-specifications,.source-value-strip').remove();
+dom('#comp-mhj27bss,#comp-ljgsdwjv1,#comp-ljgsdwjs,#comp-mm90kg9v,.home-specifications,.source-value-strip').remove();
 dom('#comp-mg0qgmec').insertAfter('#comp-mtzsf909');
 dom('#comp-mtzsgo74').before('<p class="hero-kicker">Steel modular homes &amp; workspaces</p>');
 dom('#comp-mtzsf909').after('<div class="hero-highlights">'+[['ShieldCheck','Purpose-built steel structures','Strong, durable frames'],['Factory','Factory-controlled manufacturing','Quality built off-site'],['Truck','Transportation & installation','Delivered to your site']].map(([name,title,note])=>'<div>'+icon(name,26)+'<p><strong>'+title+'</strong><span>'+note+'</span></p></div>').join('')+'</div>');

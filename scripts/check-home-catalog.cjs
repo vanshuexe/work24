@@ -1,6 +1,6 @@
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const assert = require('node:assert/strict');
-const models = [['sc-20x10s', 'SC 20x10S'], ['sc-20x10-one', 'SC 20x10 One'], ['sc-20x40-two', 'SC 20x40 Two']];
+const models = [['sc-200-s', 'SC 200 S'], ['sc-300-one', 'SC 300 One'], ['sc-600-two', 'SC 600 Two']];
 (async () => {
   const browser = await chromium.launch({ executablePath: process.env.CHROME_EXECUTABLE, headless: true });
   try {
@@ -34,7 +34,7 @@ const models = [['sc-20x10s', 'SC 20x10S'], ['sc-20x10-one', 'SC 20x10 One'], ['
       assert.equal(await page.locator('select[name=interest]').inputValue(), name);
     }
     await page.route('**/api/enquiries', async route => {
-      const payload = route.request().postDataJSON(); assert.equal(payload.interest, 'SC 20x40 Two');
+      const payload = route.request().postDataJSON(); assert.equal(payload.interest, 'SC 600 Two');
       await route.fulfill({ status: 201, contentType: 'application/json', body: '{"ok":true}' });
     });
     await page.locator('input[name=name]').fill('Preview Check'); await page.locator('input[name=email]').fill('preview@example.com'); await page.locator('input[name=phone]').fill('9876543210'); await page.locator('input[name=location]').fill('Delhi'); await page.locator('input[name=consent]').check(); await page.getByRole('button', { name: 'Request My Quotation' }).click(); await page.getByRole('heading', { name: 'Your idea is in good hands.' }).waitFor();
@@ -53,7 +53,7 @@ const models = [['sc-20x10s', 'SC 20x10S'], ['sc-20x10-one', 'SC 20x10 One'], ['
         assert.equal(response.status(), 200); assert.equal(await page.locator('h1').count(), 1);
         assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false, path + ' fits at ' + width);
         assert.ok(await page.locator('main h1, main h2, main h3, main p, main form, .home-model-card, .product-thumbnails').evaluateAll(nodes => nodes.every(el => { const r = el.getBoundingClientRect(); return !r.width || (r.left >= -1 && r.right <= innerWidth + 1); })), path + ' text fits at ' + width);
-        if ([390, 1440].includes(width) && ['/', '/prefab-homes', '/prefab-homes/sc-20x10s'].includes(path)) {
+        if ([390, 1440].includes(width) && ['/', '/prefab-homes', '/prefab-homes/sc-200-s'].includes(path)) {
           for (const image of await page.locator('main img,.reference-home main img').all()) { await image.scrollIntoViewIfNeeded(); await image.evaluate(el => el.decode().catch(() => {})); }
           await page.evaluate(() => scrollTo(0,0));
           await page.screenshot({ path: `test-results/catalog-${path === '/' ? 'home' : path.replaceAll('/', '-')}-${width}.png`, fullPage: true });
